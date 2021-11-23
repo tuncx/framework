@@ -106,6 +106,7 @@ jobs:
           echo Ninja path is: `which ninja`
           echo CCache path is: `which ccache`
           ccache -z
+          ccache -C
           cmake --version
 
       - name: 'Untar vcpkg bootstrap cache'
