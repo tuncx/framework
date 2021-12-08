@@ -59,16 +59,6 @@ addMaterial(const String& name)
 /*---------------------------------------------------------------------------*/
 
 void MeshEnvironmentBuildInfo::
-addMaterial(const String& name,const String& var_name)
-{
-  _checkValid(name);
-  m_materials.add(MatInfo(name,var_name));
-}
-
-/*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*/
-
-void MeshEnvironmentBuildInfo::
 _checkValid(const String& name)
 {
   for( Integer i=0, nb_mat=m_materials.size(); i<nb_mat; ++i ){

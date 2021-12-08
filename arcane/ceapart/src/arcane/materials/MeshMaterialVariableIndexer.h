@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //-----------------------------------------------------------------------------
 /*---------------------------------------------------------------------------*/
-/* MeshMaterialVariableIndexer.h                               (C) 2000-2018 */
+/* MeshMaterialVariableIndexer.h                               (C) 2000-2021 */
 /*                                                                           */
 /* Indexer pour les variables materiaux.                                     */
 /*---------------------------------------------------------------------------*/
@@ -84,8 +84,6 @@ class ARCANE_MATERIALS_EXPORT MeshMaterialVariableIndexer
   void setCells(const CellGroup& cells) { m_cells = cells; }
   void setIsEnvironment(bool is_environment) { m_is_environment = is_environment; }
   void setIndex(Integer index) { m_index = index; }
-  void setWantedVariableName(const String& v) { m_wanted_variable_name = v; }
-  const String& wantedVariableName() const { return m_wanted_variable_name; }
   Integer nbItem() const { return m_local_ids.size(); }
   ConstArrayView<Int32> localIds() const { return m_local_ids; }
 
@@ -110,9 +108,6 @@ class ARCANE_MATERIALS_EXPORT MeshMaterialVariableIndexer
 
   //! Nom du matériau ou milieu
   String m_name;
-
-  //! Nom de la variable associé (utilisé seulement lors de la construction de)
-  String m_wanted_variable_name;
 
   //! Liste des mailles de cet indexer
   CellGroup m_cells;

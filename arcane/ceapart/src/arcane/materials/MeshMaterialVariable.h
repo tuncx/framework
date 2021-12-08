@@ -413,8 +413,6 @@ class ItemMaterialVariableScalar
 
   void _synchronizeV1();
   void _synchronizeV2();
-  void _synchronizeV3();
-  void _synchronizeV4();
   void _synchronizeV5();
 };
 

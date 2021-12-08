@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //-----------------------------------------------------------------------------
 /*---------------------------------------------------------------------------*/
-/* MeshEnvironmentBuildInfo.h                                  (C) 2000-2014 */
+/* MeshEnvironmentBuildInfo.h                                  (C) 2000-2021 */
 /*                                                                           */
 /* Informations pour la création d'un milieu.                                */
 /*---------------------------------------------------------------------------*/
@@ -21,16 +21,8 @@
 /*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*/
 
-ARCANE_BEGIN_NAMESPACE
-
-/*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*/
-
-MATERIALS_BEGIN_NAMESPACE
-
-/*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*/
-
+namespace Arcane::Materials
+{
 class IMeshMaterialMng;
 
 /*---------------------------------------------------------------------------*/
@@ -53,15 +45,8 @@ class ARCANE_MATERIALS_EXPORT MeshEnvironmentBuildInfo
   {
    public:
     MatInfo(const String& name) : m_name(name){}
-    MatInfo(const String& name,const String& var_name)
-    : m_name(name), m_var_name(var_name){}
    public:
     String m_name;
-    String m_var_name;
-   public:
-    // Le constructeur vide ne doit pas être dispo mais ca plante à
-    // la compilation avec VS2010 s'il est absent
-    MatInfo() {}
   };
  public:
 
@@ -80,14 +65,6 @@ class ARCANE_MATERIALS_EXPORT MeshEnvironmentBuildInfo
    * IMeshMaterialMng::registerMaterialInfo().
    */
   void addMaterial(const String& name);
-
-  /*!
-   * \internal
-   * \brief Ajoute le matériau de nom \a name au milieu
-   *
-   * La variable associée à ce matériau aura pour nom \a var_name.
-   */
-  void addMaterial(const String& name,const String& var_name);
 
  public:
 
@@ -111,11 +88,7 @@ class ARCANE_MATERIALS_EXPORT MeshEnvironmentBuildInfo
 /*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*/
 
-/*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*/
-
-MATERIALS_END_NAMESPACE
-ARCANE_END_NAMESPACE
+} // End namespace Arcane::Materials
 
 /*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*/
